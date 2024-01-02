@@ -17,5 +17,9 @@
   ],
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@smithy/eventstream-codec": "^2.0.15",
+    "@smithy/util-utf8": "^2.0.2"
+  }
 }

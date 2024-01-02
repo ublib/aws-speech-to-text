@@ -44,8 +44,8 @@ const PATH = "/stream-transcription-websocket";
  * const signedUrl = generateSignedWsUrl(
  *   Signer,
  *   await Credentials.get(),
- *   { region: "us-east-1", languageCode: "en-US" }
- * )
+ *   { region: "us-east-1", languageCode: "en-US" },
+ * );
  * ```
  */
 export function generateSignedWsUrl(

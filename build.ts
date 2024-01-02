@@ -6,8 +6,7 @@ import { rimraf } from "rimraf";
 import { bundle } from "dts-bundle";
 import { t } from "chainsi";
 
-const finishedBuild = (dir: string) =>
-  console.log(`${t("✔︎").green._} build: ${t(dir).blue._}`);
+const finishedBuild = (dir: string) => console.log(`${t("✔︎").green._} build: ${t(dir).blue._}`);
 
 const PACKAGES: Record<string, { external?: string[] }> = {
   "aws-s2t": {},
