@@ -1,5 +1,5 @@
 {
-  "name": "@aws-s2t/sign",
+  "name": "@aws-s2t/encode",
   "version": "0.0.1",
   "author": "Ubugeeei <ubuge1122@gmail.com>",
   "license": "MIT",
@@ -17,8 +17,5 @@
   ],
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "ufo": "^1.3.2"
-  }
+  ]
 }
