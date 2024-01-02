@@ -72,10 +72,7 @@ export class AmazonTranscribeSoc {
   private _socket: WebSocket;
   private _eventStreamCodec: EventStreamCodec;
 
-  constructor(
-    private _signedUrl: SignedTranscribeWsUrl,
-    private _hooks: AmazonTranscribeSocHooks
-  ) {
+  constructor(private _signedUrl: SignedTranscribeWsUrl, private _hooks: AmazonTranscribeSocHooks) {
     this._eventStreamCodec = new EventStreamCodec(toUtf8, fromUtf8);
 
     this._socket = new WebSocket(this.signedUrl);
@@ -89,9 +86,7 @@ export class AmazonTranscribeSoc {
       const messageWrapper = this._eventStreamCodec.decode(Buffer.from(m.data));
       // ! ref: https://github.com/amazon-archives/amazon-transcribe-websocket-static/blob/6a0b97f1c667b649c31cd9b550c37795a5c7ce25/lib/main.js#L104
       // eslint-disable-next-line prefer-spread, @typescript-eslint/no-explicit-any
-      const messageBody = JSON.parse(
-        String.fromCharCode.apply(String, messageWrapper.body as any)
-      );
+      const messageBody = JSON.parse(String.fromCharCode.apply(String, messageWrapper.body as any));
       if (messageWrapper.headers[":message-type"].value === "event") {
         this._hooks.onMessage?.(messageBody);
       }
@@ -107,10 +102,7 @@ export class AmazonTranscribeSoc {
   }
 
   public send(rawAudioChunk: RawAudioChunk) {
-    const binary = convertAudioToBinaryMessage(
-      rawAudioChunk,
-      this._eventStreamCodec
-    );
+    const binary = convertAudioToBinaryMessage(rawAudioChunk, this._eventStreamCodec);
     if (!binary) return;
     if (this._socket.readyState === this._socket.OPEN) {
       this._socket.send(binary);
@@ -183,16 +175,12 @@ export interface RawAudioChunk {
  */
 const convertAudioToBinaryMessage = (
   rawAudioChunk: RawAudioChunk,
-  eventStreamCodec: EventStreamCodec
+  eventStreamCodec: EventStreamCodec,
 ): Uint8Array | undefined => {
   const raw = new Float32Array(rawAudioChunk.value.buffer);
   if (raw == null) return;
 
-  const downSampledBuffer = downSampleBuffer(
-    raw,
-    rawAudioChunk.sampleRate,
-    SAMPLE_RATE
-  );
+  const downSampledBuffer = downSampleBuffer(raw, rawAudioChunk.sampleRate, SAMPLE_RATE);
   const pcmEncodedBuffer = pcmEncode(downSampledBuffer);
   const audioEventMessage = getAudioEventMessage(Buffer.from(pcmEncodedBuffer));
   const binary = eventStreamCodec.encode(audioEventMessage as Message);

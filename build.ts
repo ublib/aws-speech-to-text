@@ -13,6 +13,7 @@ const PACKAGES: Record<string, { external?: string[] }> = {
   sign: {},
   encode: {},
   invoke: {},
+  helpers: {},
   // TODO:
 };
 
