@@ -13,6 +13,7 @@ const PACKAGES: Record<string, { external?: string[] }> = {
   "aws-s2t": {},
   sign: {},
   encode: {},
+  invoke: {},
   // TODO:
 };
 
