@@ -6,12 +6,6 @@
     "indentWidth": 2,
     "lineWidth": 120,
     "lineEnding": "lf",
-    "ignore": [
-      "node_modules",
-      "dist",
-      "package-lock.json",
-      "tsconfig.*.json",
-      ".vscode/settings.json"
-    ]
+    "ignore": ["node_modules", "dist", "package-lock.json", "tsconfig.*.json", ".vscode/settings.json"]
   }
 }

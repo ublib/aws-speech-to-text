@@ -6,11 +6,11 @@ import { rimraf } from "rimraf";
 import { bundle } from "dts-bundle";
 import { t } from "chainsi";
 
-const finishedBuild = (dir: string) =>
-  console.log(`${t("✔︎").green._} build: ${t(dir).blue._}`);
+const finishedBuild = (dir: string) => console.log(`${t("✔︎").green._} build: ${t(dir).blue._}`);
 
 const PACKAGES: Record<string, { external?: string[] }> = {
-  'aws-s2t': {},
+  "aws-s2t": {},
+  sign: {},
   // TODO:
 };
 
@@ -21,7 +21,6 @@ export const buildMain = () => {
     const res = await build({
       entryPoints: [path.resolve(`packages/${pkg}/src/index`)],
       bundle: true,
-      minify: true,
       target: "es2018",
       outdir: `packages/${pkg}/dist`,
       external,

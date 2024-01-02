@@ -3,6 +3,7 @@
     "biomejs",
     "chainsi",
     "oxlint",
+    "transcribestreaming",
     "tsenvar"
   ],
   "[typescript]": {
