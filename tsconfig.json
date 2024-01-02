@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "temp",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "rootDir": ".",
+    "paths": {
+      "@aws-s2t/*": [
+        "./packages/*/src"
+      ],
+      "aws-s2t": [
+        "./packages/aws-s2t/src"
+      ],
+    }
+  },
+  "include": [
+    "packages",
+    "examples",
+  ]
+}
