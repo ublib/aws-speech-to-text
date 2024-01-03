@@ -1,1 +1,1 @@
-throw "not implemented!"
+export { MicStream } from "./micStream";

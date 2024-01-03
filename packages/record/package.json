@@ -17,5 +17,8 @@
   ],
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "buffer-from": "^1.1.2"
+  }
 }
