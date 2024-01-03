@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "tsx build",
-    "fmt": "npx @biomejs/biome format .",
+    "fmt": "biome format .",
     "lint": "oxlint",
     "prepare": "husky install"
   },
@@ -37,10 +37,12 @@
     "pnpm": "8.12.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "latest",
     "@types/dts-bundle": "^0.0.35",
     "@types/node": "^20.10.6",
     "chainsi": "^0.0.1",
     "esbuild": "^0.19.11",
+    "husky": "^8.0.3",
     "oxlint": "^0.0.22",
     "rimraf": "^5.0.5",
     "tsx": "^4.7.0",
