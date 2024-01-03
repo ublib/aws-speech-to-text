@@ -14,7 +14,7 @@ const PACKAGES: Record<string, { external?: string[] }> = {
   encode: {},
   invoke: {},
   helpers: {},
-  // TODO:
+  record: {},
 };
 
 export const buildMain = () => {

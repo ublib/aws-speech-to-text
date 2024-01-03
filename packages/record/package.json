@@ -1,0 +1,21 @@
+{
+  "name": "@aws-s2t/record",
+  "version": "0.0.1",
+  "author": "Ubugeeei <ubuge1122@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "description": "Amazon Transcribe Speech to Text client for TypeScript",
+  "main": "./dist/index.js",
+  "keywords": [
+    "amazon-transcribe",
+    "amazon",
+    "transcribe",
+    "speech",
+    "speech-to-text",
+    "text",
+    "typescript"
+  ],
+  "files": [
+    "dist"
+  ]
+}
