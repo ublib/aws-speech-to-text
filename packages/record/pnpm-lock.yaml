@@ -5,11 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  audio-recorder-polyfill:
+    specifier: ^0.4.1
+    version: 0.4.1
   buffer-from:
     specifier: ^1.1.2
     version: 1.1.2
 
 packages:
+
+  /audio-recorder-polyfill@0.4.1:
+    resolution: {integrity: sha512-SS4qVOzuVwlS/tjQdd0uR+9cCKBTkx4jsAdjM+rMNqoTEWf6bMnBSTfv+FO4Zn9ngxviJOxhkgRWWXsAMqM96Q==}
+    dev: false
 
   /buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
